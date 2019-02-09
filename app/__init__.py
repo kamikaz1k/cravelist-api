@@ -20,7 +20,7 @@ api.add_resource(HelloWorld, '/')
 api.add_resource(
     UsersResource,
     '/api/users',
-    '/api/users/<int:id>'
+    '/api/users/<int:user_id>'
 )
 
 

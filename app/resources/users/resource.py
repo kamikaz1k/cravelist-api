@@ -1,4 +1,4 @@
-from flask import g, request
+from flask import request
 from flask_restful import abort, Resource
 from marshmallow.exceptions import ValidationError
 
@@ -42,14 +42,9 @@ class UsersResource(Resource):
         if user is None:
             abort(404)
 
-        if user.id != g.user.id and not g.user.can_update_users:
-            abort(401)
-
         return self.schema().dump(user)
 
     def _get_list(self):
-        if not g.user.can_update_users:
-            abort(401)
 
         page = int(request.args.get('p', 1))
 
