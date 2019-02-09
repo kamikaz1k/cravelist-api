@@ -22,6 +22,7 @@ def create_app():
     app = Flask(__name__)
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('JAWSDB_URL')
+    app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'super-secret')
 
     db.init_app(app)
     api.init_app(app)

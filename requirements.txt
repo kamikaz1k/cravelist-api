@@ -3,3 +3,10 @@ Flask-RESTful
 Flask-SQLAlchemy
 mysqlclient
 gunicorn
+mysqlclient
+bcrypt
+PyJWT
+python-dateutil
+json-delta
+marshmallow-jsonapi
+apispec
