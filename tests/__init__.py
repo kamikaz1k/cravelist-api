@@ -6,7 +6,7 @@ from nose.tools import eq_
 from sqlalchemy import event
 
 from app import create_app, db
-# from app.models.token import Token
+from app.models.token import Token
 from app.models.user import User
 
 
@@ -118,5 +118,5 @@ class BaseDatabaseTestCase(object):
     #     options.update(overrides)
     #     return self._create_user(**options)
 
-    # def _create_token_for_user(self, user):
-    #     return Token.create(user)
+    def _create_token_for_user(self, user):
+        return Token.create(user)
